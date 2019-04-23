@@ -1,6 +1,6 @@
 package main;
 
-import java.util.Objects;
+import main.enums.TypePlayer;
 
 public class Guerrier extends Player {
 

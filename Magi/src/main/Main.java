@@ -1,5 +1,7 @@
 package main;
 
+import main.enums.TypePlayer;
+
 public class Main {
 
     public static void main(String[] args) {

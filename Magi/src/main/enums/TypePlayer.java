@@ -1,4 +1,4 @@
-package main;
+package main.enums;
 
 /**
  * Player est l'enumeration donnant le type du joueur
