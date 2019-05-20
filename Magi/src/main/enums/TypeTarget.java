@@ -14,5 +14,5 @@
 package main.enums;
 
 public enum TypeTarget {
-	MYSELF, OTHER, ALL;
+	MYSELF, OTHER;
 }

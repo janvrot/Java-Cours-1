@@ -14,6 +14,6 @@
 package main.enums;
 
 public enum TypeKeys {
-	AMOUNT, ACTION, TARGET
+    AMOUNT, ACTION, TARGET, STAT;
 }
 

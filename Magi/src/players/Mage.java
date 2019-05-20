@@ -23,11 +23,11 @@ public class Mage extends Player {
         return "Mage{} " + super.toString();
     }
 
-    @Override
+	@Override
 	public List<Map<TypeKeys, Object>> basicAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();
 		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
-		actions.putAll(super.buildAction(super.getStrength(), TypeAction.DAMAGE, TypeTarget.OTHER));
+		actions.putAll(super.buildAction(super.getStrength(), TypeAction.DAMAGE, TypeTarget.OTHER, null));
 		result.add(actions);
 		return result;
 	}
@@ -36,8 +36,8 @@ public class Mage extends Player {
 	public List<Map<TypeKeys, Object>> specialAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();
 		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
-		actions.putAll(super.buildAction((super.getLife() - super.getStrength() / 2), TypeAction.DAMAGE, TypeTarget.MYSELF));
-		actions.putAll(super.buildAction(super.getStrength() * 2, TypeAction.DAMAGE, TypeTarget.OTHER));
+		actions.putAll(super.buildAction((super.getLife() - super.getStrength() / 2), TypeAction.DAMAGE, TypeTarget.MYSELF, null));
+		actions.putAll(super.buildAction(super.getStrength() * 2, TypeAction.DAMAGE, TypeTarget.OTHER, null));
 		result.add(actions);
 		return result;
 	}
