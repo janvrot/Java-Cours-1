@@ -1,6 +1,5 @@
 package main.enums;
 
 public enum TypeAction {
-    Normal,
-    Boost
+	SINGLE_DAMAGE, SINGLE_BOOST;
 }

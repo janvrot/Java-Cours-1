@@ -6,20 +6,21 @@ import java.util.List;
 
 public class Actions {
 
-    public void doBoost(Player currentPlayer, int value, String stat) {
+    public void doBoost(Player targetPlayer, int value, String stat) {
         switch (stat) {
             case "Life":
-                currentPlayer.setLife(currentPlayer.getLife() + value);
+                targetPlayer.setLife(targetPlayer.getLife() + value);
                 break;
             case "Strength":
-                currentPlayer.setStrength(currentPlayer.getStrength() + value);
+                targetPlayer.setStrength(targetPlayer.getStrength() + value);
                 break;
             case "Agility":
-                currentPlayer.setAgility(currentPlayer.getAgility() + value);
+                targetPlayer.setAgility(targetPlayer.getAgility() + value);
                 break;
             case "Intelligence":
-                currentPlayer.setIntelligence(currentPlayer.getIntelligence() + value);
+                targetPlayer.setIntelligence(targetPlayer.getIntelligence() + value);
                 break;
+                
         }
     }
 }
