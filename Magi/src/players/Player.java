@@ -1,6 +1,17 @@
-package main;
+package players;
 
+import static main.enums.TypeKeys.ACTION;
+import static main.enums.TypeKeys.AMOUNT;
+import static main.enums.TypeKeys.TARGET;
+
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+
+import main.enums.TypeAction;
+import main.enums.TypeKeys;
+import main.enums.TypeTarget;
 
 /**
  * Class représentant les statistiques de base du joueur
@@ -75,9 +86,17 @@ public abstract class Player {
         this.intelligence = intelligence;
     }
 
-    public abstract int basicAttack();
+    public abstract List<Map<TypeKeys, Object>> basicAttack();
 
-    public abstract int specialAttack();
+    public abstract List<Map<TypeKeys, Object>> specialAttack();
+    
+    public Map<TypeKeys, Object> buildAction(int amount, TypeAction action, TypeTarget target) {
+		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
+		actions.put(AMOUNT, amount);
+		actions.put(ACTION, action);
+		actions.put(TARGET, target);
+		return actions;
+    }
 
     @Override
     public String toString() {

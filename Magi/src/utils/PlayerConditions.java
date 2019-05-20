@@ -11,7 +11,9 @@
  * Créé le 17 mai 2019.
  * </p>
  */
-package main;
+package utils;
+
+import main.enums.TypeFilter;
 
 public final class PlayerConditions {
 
@@ -20,21 +22,31 @@ public final class PlayerConditions {
 	}
 
 	public static boolean chooseClassCondition(int result) {
-		return (result < 1 || result > 3) ? false : true;
+		return (result > 0 && result < 4);
 	}
 
-	public static boolean addFilter(int response, String filterName) {
-		if (filterName != null && response != -1) {
-			switch (filterName) {
-			case "chooseClass":
+	public static boolean choosePlayers(int result) {
+		return result > 1;
+	}
+	
+	public static boolean chooseStats(int result) {
+		return (result > 0 && result <= 100);
+	}
+
+	public static boolean addFilter(int response, TypeFilter filter) {
+		if (filter != null && response != -1) {
+			switch (filter) {
+			case CHOOSEPLAYERS:
+				return choosePlayers(response);
+			case CHOOSECLASS:
 				return chooseClassCondition(response);
+			case CHOOSESTATS:
+				return chooseStats(response);
 			default:
 				return false;
 			}
-		} else if (response == -1) {
-			return false;
 		} else {
-			return true;
+			return response != -1;
 		}
 	}
 }

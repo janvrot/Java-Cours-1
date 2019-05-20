@@ -8,11 +8,12 @@
  * à  des tiers sans son autorisation préalable.
  * </p>
  * <p>
- * Créé le 30 avr. 2019.
+ * Créé le 20 mai 2019.
  * </p>
  */
 package main.enums;
 
-public enum TypeTarget {
-	MYSELF, OTHER, ALL;
+public enum TypeFilter {
+	CHOOSEPLAYERS, CHOOSECLASS, CHOOSESTATS;
 }
+
