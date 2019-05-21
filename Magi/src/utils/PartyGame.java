@@ -36,7 +36,8 @@ public class PartyGame {
 		List<Player> allPlayers = players;
 		while (allPlayers.size() > 1) {
 			for (Player player : allPlayers) {
-				int chooseAttack = Game.addQuestion("Choisissez une attaque", CHOOSEATACK);
+			    GameMessage.playerTurn(player);
+				int chooseAttack = Game.addQuestion(GameMessage.chooseAttack(player), CHOOSEATACK);
 				List<Map<TypeKeys, Object>> attack = doAttack(chooseAttack, player);
 				for (Map<TypeKeys, Object> infos : attack) {
 					int targetPosition = checkTarget(allPlayers, player, (TypeTarget) infos.get(TARGET));
@@ -45,7 +46,11 @@ public class PartyGame {
 				}
 			}
 		}
-		System.out.println("Partie terminée !!");
+		if (allPlayers.size() == 1) {
+			System.out.println(allPlayers.get(0).getName() + " a gagné !!!");
+		} else {
+			System.out.println("Partie terminée sans vainqueur !!");
+		}
 	}
 
 	public static List<Map<TypeKeys, Object>> doAttack(int result, Player player) {
@@ -120,7 +125,8 @@ public class PartyGame {
 
 	public static Player doAction(TypeAction action, Player player, int amount, TypeStat stat) {
 		if (action == TypeAction.DAMAGE) {
-			player.setLife(player.getLife() - amount);
+			player.setLife(player.getLife() - minimalValue(amount));
+			System.out.println(player.getName() + " a perdu " + minimalValue(amount) + " points de vie");
 		} else {
 			doBoost(player, amount, stat);
 		}
@@ -130,21 +136,32 @@ public class PartyGame {
 	public static Player doBoost(Player player, int amount, TypeStat stat) {
 		switch (stat) {
 		case LIFE:
-			player.setLife(player.getLife() + amount);
+			player.setLife(player.getLife() + minimalValue(amount));
 			if (player.getLife() > player.getLvl() * 5) {
 				player.setLife(player.getLvl() * 5);
 			}
+            System.out.println(player.getName() + " a été soigné de " + minimalValue(amount) + " points de vie");
 			break;
 		case AGILITY:
-			player.setAgility(player.getAgility() + amount);
+			player.setAgility(player.getAgility() + minimalValue(amount));
+            System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points d'agilité");
 			break;
 		case INTELLIGENCE:
-			player.setIntelligence(player.getIntelligence() + amount);
+			player.setIntelligence(player.getIntelligence() + minimalValue(amount));
+            System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points d'intelligence");
 			break;
 		case STRENGTH:
-			player.setStrength(player.getStrength() + amount);
+			player.setStrength(player.getStrength() + minimalValue(amount));
+            System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points de force");
 			break;
 		}
 		return player;
+	}
+
+	private static int minimalValue(int amount) {
+		if (amount == 0)
+			return 1;
+		else
+			return amount;
 	}
 }

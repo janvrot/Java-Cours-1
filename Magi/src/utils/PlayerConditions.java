@@ -29,8 +29,12 @@ public final class PlayerConditions {
         return result > 1;
     }
 
-    public static boolean chooseStats(int result) {
+    public static boolean chooseLvl(int result) {
         return (result > 0 && result <= 100);
+    }
+
+    public static boolean chooseStats(int result) {
+        return (result >= 0 && result <= 100);
     }
 
     public static boolean chooseAttack(int result) {
@@ -54,6 +58,8 @@ public final class PlayerConditions {
                     return chooseAttack(response);
                 case CHOOSETARGET:
                     return chooseTarget(response);
+                case CHOOSELVL:
+                    return chooseLvl(response);
                 default:
                     return false;
             }

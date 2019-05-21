@@ -3,13 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="761b0ff3-96a7-423b-9b9b-cd14a5601784" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeKeys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeTarget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/players/Guerrier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/players/Guerrier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/players/Mage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/players/Mage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/players/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/players/Rodeur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/players/Rodeur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/utils/PartyGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/utils/PartyGame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/utils/PlayerConditions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/utils/PlayerConditions$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/utils/PlayerConditions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/utils/PlayerConditions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Magi/utils/Setup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/utils/Setup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/enums/TypeStat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/TypeStat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/players/Guerrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/players/Guerrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/enums/TypeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/TypeFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/players/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/players/Rodeur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/players/Rodeur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/GameMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GameMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/PartyGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PartyGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/PlayerConditions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PlayerConditions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Setup.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,11 +36,83 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/utils/PartyGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1295">
-              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+            <state relative-caret-position="168">
+              <caret line="128" column="84" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="113" selection-start-line="16" selection-start-column="113" selection-end-line="16" selection-end-column="113" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/players/Rodeur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/PlayerConditions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+              <folding>
+                <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#766#767#0" expanded="true" />
+                <element signature="e#816#817#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/enums/TypeFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="16" column="81" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="56">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/GameMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="497">
+              <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/players/Mage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -53,20 +137,22 @@
         <option value="$PROJECT_DIR$/src/MainTest.java" />
         <option value="$PROJECT_DIR$/src/main/TypePlayer.java" />
         <option value="$PROJECT_DIR$/src/main/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/Guerrier.java" />
         <option value="$PROJECT_DIR$/src/main/Player.java" />
         <option value="$PROJECT_DIR$/src/main/Actions.java" />
         <option value="$PROJECT_DIR$/src/main/enums/TypeAction.java" />
         <option value="$PROJECT_DIR$/src/main/enums/TypeTarget.java" />
-        <option value="$PROJECT_DIR$/src/main/enums/TypeFilter.java" />
-        <option value="$PROJECT_DIR$/src/utils/PlayerConditions.java" />
         <option value="$PROJECT_DIR$/src/main/enums/TypeStat.java" />
         <option value="$PROJECT_DIR$/src/players/Guerrier.java" />
-        <option value="$PROJECT_DIR$/src/players/Mage.java" />
         <option value="$PROJECT_DIR$/src/players/Rodeur.java" />
         <option value="$PROJECT_DIR$/src/main/enums/TypeKeys.java" />
         <option value="$PROJECT_DIR$/src/players/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/enums/TypeFilter.java" />
+        <option value="$PROJECT_DIR$/src/utils/PlayerConditions.java" />
+        <option value="$PROJECT_DIR$/src/utils/Setup.java" />
+        <option value="$PROJECT_DIR$/src/players/Mage.java" />
+        <option value="$PROJECT_DIR$/src/utils/GameMessage.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/utils/PartyGame.java" />
       </list>
     </option>
@@ -153,10 +239,11 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558472005409" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558475025411" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/main/enums/TypeAction.java" />
   </component>
   <component name="RecentsManager">
@@ -222,7 +309,7 @@
       <updated>1553353140459</updated>
       <workItem from="1553353141966" duration="381000" />
       <workItem from="1555532676916" duration="275000" />
-      <workItem from="1556045753585" duration="13011000" />
+      <workItem from="1556045753585" duration="15911000" />
     </task>
     <task id="LOCAL-00001" summary="Tests des actions selon le cas">
       <created>1556053639092</created>
@@ -235,13 +322,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13667000" />
+    <option name="totallyTimeSpent" value="16567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -249,8 +336,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -371,20 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Setup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-359">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -392,40 +465,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/enums/TypeFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/PlayerConditions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="56" column="24" lean-forward="true" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
-          <folding>
-            <element signature="e#819#820#0" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/players/Mage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/players/Rodeur.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -471,10 +510,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Setup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/players/Mage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/GameMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/enums/TypeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="16" column="81" selection-start-line="16" selection-start-column="81" selection-end-line="16" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/PlayerConditions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <folding>
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#766#767#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="113" selection-start-line="16" selection-start-column="113" selection-end-line="16" selection-end-column="113" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/players/Rodeur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="42" column="59" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/PartyGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1295">
-          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
+        <state relative-caret-position="168">
+          <caret line="128" column="84" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

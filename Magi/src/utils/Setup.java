@@ -13,8 +13,7 @@
  */
 package utils;
 
-import static main.enums.TypeFilter.CHOOSECLASS;
-import static main.enums.TypeFilter.CHOOSESTATS;
+import static main.enums.TypeFilter.*;
 import static utils.Game.addQuestion;
 
 import java.util.Arrays;
@@ -46,7 +45,7 @@ public class Setup {
 	}
 
 	public static Player chooseStat(Player player) {
-		int lvlStat = addQuestion("Choisissez votre niveau (entre 1 et 100)", CHOOSESTATS);
+		int lvlStat = addQuestion("Choisissez votre niveau (entre 1 et 100)", CHOOSELVL);
 		player.setLvl(lvlStat);
 		player.setLife(player.getLvl() * 5);
 		List<Integer> points = skillPointLeft(player);

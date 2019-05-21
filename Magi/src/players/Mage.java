@@ -32,7 +32,7 @@ public class Mage extends Player {
 	public List<Map<TypeKeys, Object>> basicAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();
 		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
-		actions.putAll(super.buildAction(super.getAgility(), DAMAGE, OTHER, null));
+		actions.putAll(super.buildAction(super.getIntelligence(), DAMAGE, OTHER, null));
 		result.add(actions);
 		return result;
 	}
