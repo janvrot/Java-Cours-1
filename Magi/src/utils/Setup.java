@@ -13,9 +13,9 @@
  */
 package utils;
 
-import static main.Game.addQuestion;
 import static main.enums.TypeFilter.CHOOSECLASS;
 import static main.enums.TypeFilter.CHOOSESTATS;
+import static utils.Game.addQuestion;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,7 +32,7 @@ public class Setup {
 	}
 	
 	public static Player chooseClass() {
-		int playerType = addQuestion("Choisissez une classe :", CHOOSECLASS);
+		int playerType = addQuestion("Choisissez une classe (1:Guerrier, 2:Rodeur, 3:Mage)", CHOOSECLASS);
 		switch (playerType) {
 		case 1:
 			return new Guerrier();
@@ -46,7 +46,7 @@ public class Setup {
 	}
 
 	public static Player chooseStat(Player player) {
-		int lvlStat = addQuestion("Choisissez votre niveau : ", CHOOSESTATS);
+		int lvlStat = addQuestion("Choisissez votre niveau (entre 1 et 100)", CHOOSESTATS);
 		player.setLvl(lvlStat);
 		player.setLife(player.getLvl() * 5);
 		List<Integer> points = skillPointLeft(player);
@@ -57,6 +57,7 @@ public class Setup {
 	}
 
 	public static List<Integer> skillPointLeft(Player player) {
+		GameMessage.chooseStatMessage(player);
 		List<String> questions = Arrays.asList("Choisissez votre force", "Choisissez votre intelligence",
 				"Choisisez votre Agilité");
 		List<Integer> values = Arrays.asList(0, 0, 0);
@@ -68,16 +69,12 @@ public class Setup {
 					if (points <= pointsLeft) {
 						values.set(i, values.get(i) + points);
 						pointsLeft = pointsLeft - points;
+						GameMessage.leftSkillPointsMessage(pointsLeft);
 					} else {
 						System.out.println("Tu n'as pas assez de points restants");
 						i--;
 					}
 				}
-			}
-			if (pointsLeft > 0) {
-				System.out.println("Il te reste des points à attribuer :)");
-			} else {
-				System.out.println("tu as attribué tous tes points");
 			}
 		}
 		return values;

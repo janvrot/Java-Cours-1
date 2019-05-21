@@ -1,4 +1,4 @@
-package main;
+package utils;
 
 import static main.enums.TypeFilter.CHOOSEPLAYERS;
 import static utils.Setup.chooseClass;
@@ -11,7 +11,6 @@ import java.util.Scanner;
 
 import main.enums.TypeFilter;
 import players.Player;
-import utils.PlayerConditions;
 
 public class Game {
 
@@ -22,17 +21,15 @@ public class Game {
 		int nbPlayers = addQuestion("Choisissez le nombre de joueurs", CHOOSEPLAYERS);
 		List<Player> players = new ArrayList<>(nbPlayers);
 		for (int i = 0; i < nbPlayers; i++) {
+			GameMessage.chooseClassMessage(i+1);
 			Player player = chooseClass();
 			player.setName("Joueur " + (i + 1));
 			player = chooseStat(player);
 			players.add(player);
 			System.out.println(player);
 		}
+		System.out.println("\n\nDEBUT DE LA PARTIE\n\n");
 		return players;
-	}
-	
-	public static void doGame(List<Player> players) {
-		
 	}
 
 	@SuppressWarnings("resource")

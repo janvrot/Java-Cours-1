@@ -1,13 +1,17 @@
 package players;
 
+import static main.enums.TypeAction.BOOST;
+import static main.enums.TypeAction.DAMAGE;
+import static main.enums.TypeStat.AGILITY;
+import static main.enums.TypeTarget.MYSELF;
+import static main.enums.TypeTarget.OTHER;
+
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-import main.enums.TypeAction;
 import main.enums.TypeKeys;
-import main.enums.TypeTarget;
 
 public class Rodeur extends Player {
 
@@ -27,7 +31,7 @@ public class Rodeur extends Player {
 	public List<Map<TypeKeys, Object>> basicAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();
 		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
-		actions.putAll(super.buildAction(super.getStrength(), TypeAction.DAMAGE, TypeTarget.OTHER, null));
+		actions.putAll(super.buildAction(super.getAgility(), DAMAGE, OTHER, null));
 		result.add(actions);
 		return result;
 	}
@@ -36,8 +40,7 @@ public class Rodeur extends Player {
 	public List<Map<TypeKeys, Object>> specialAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();
 		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
-		actions.putAll(super.buildAction((super.getLife() - super.getStrength() / 2), TypeAction.DAMAGE, TypeTarget.MYSELF, null));
-		actions.putAll(super.buildAction(super.getStrength() * 2, TypeAction.DAMAGE, TypeTarget.OTHER, null));
+		actions.putAll(super.buildAction(super.getLvl() / 2, BOOST, MYSELF, AGILITY));
 		result.add(actions);
 		return result;
 	}

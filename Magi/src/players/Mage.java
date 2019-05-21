@@ -1,5 +1,9 @@
 package players;
 
+import static main.enums.TypeAction.DAMAGE;
+import static main.enums.TypeStat.LIFE;
+import static main.enums.TypeTarget.OTHER;
+
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
@@ -7,6 +11,7 @@ import java.util.Map;
 
 import main.enums.TypeAction;
 import main.enums.TypeKeys;
+import main.enums.TypeStat;
 import main.enums.TypeTarget;
 
 public class Mage extends Player {
@@ -27,7 +32,7 @@ public class Mage extends Player {
 	public List<Map<TypeKeys, Object>> basicAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();
 		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
-		actions.putAll(super.buildAction(super.getStrength(), TypeAction.DAMAGE, TypeTarget.OTHER, null));
+		actions.putAll(super.buildAction(super.getAgility(), DAMAGE, OTHER, null));
 		result.add(actions);
 		return result;
 	}
@@ -36,8 +41,7 @@ public class Mage extends Player {
 	public List<Map<TypeKeys, Object>> specialAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();
 		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
-		actions.putAll(super.buildAction((super.getLife() - super.getStrength() / 2), TypeAction.DAMAGE, TypeTarget.MYSELF, null));
-		actions.putAll(super.buildAction(super.getStrength() * 2, TypeAction.DAMAGE, TypeTarget.OTHER, null));
+		actions.putAll(super.buildAction(super.getIntelligence() * 2, TypeAction.BOOST, TypeTarget.MYSELF, LIFE));
 		result.add(actions);
 		return result;
 	}
