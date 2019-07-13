@@ -8,24 +8,39 @@
  * à  des tiers sans son autorisation préalable.
  * </p>
  * <p>
- * Créé le 28 juin 2019.
+ * Créé le 4 juil. 2019.
  * </p>
  */
-package mock;
+package mock.gameservice;
 
 import enums.TypeFilter;
 import service.GameService;
 
-public class GameImplMock implements GameService {
+public class GameServiceMockForSetupServiceTest implements GameService {
+	private int chooseTreat = 0;
+	private int nbCall = 0;
 
 	@Override
 	public int getResponse() {
-		return 0;
+		return 1;
 	}
 
 	@Override
 	public int addQuestion(String question, TypeFilter filter) {
-		return 0;
+		int result = 0;
+		switch (chooseTreat) {
+		case 0:
+			result = nbCall;
+			nbCall++;			
+		}
+		return result;
 	}
 
+	public void setNbCall(int nbCall) {
+		this.nbCall = nbCall;
+	}
+	
+	public void setChooseTreat(int chooseTreat) {
+		this.chooseTreat = chooseTreat;
+	}
 }

@@ -8,20 +8,17 @@
  * à  des tiers sans son autorisation préalable.
  * </p>
  * <p>
- * Créé le 3 juil. 2019.
+ * Créé le 4 juil. 2019.
  * </p>
  */
-package mock;
+package service;
 
-import enums.TypeFilter;
-import service.PlayerConditionsService;
+import java.util.List;
 
-public class PlayerConditionImplMock implements PlayerConditionsService {
+import players.Player;
 
-	@Override
-	public int checkCondition(String question, TypeFilter filter) {
-		return 1;
-	}
+public interface PartyGameService {
 
+	void playGame(List<Player> players);
 }
 

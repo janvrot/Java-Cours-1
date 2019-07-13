@@ -15,7 +15,7 @@ import service.PlayerConditionsService;
  */
 public class GameServiceImpl implements GameService {
 
-	private PlayerConditionsService playerConditionService;
+	private static PlayerConditionsService playerConditionService = new PlayerConditionsServiceImpl();
 
 	/**
 	 * Récupère l'entrée dans le terminal
@@ -37,14 +37,11 @@ public class GameServiceImpl implements GameService {
 	@Override
 	public int addQuestion(String question, TypeFilter filter) {
 		System.out.println(question);
-		if (!playerConditionService.checkCondition(question, filter)) {
-			addQuestion(question, filter);
-		} else
-			return playerConditionService.checkCondition(question, filter);
+		return playerConditionService.checkCondition(question, filter);
 	}
 
-	public void setPlayerConditionsService(PlayerConditionsService playerConditionService) {
-		this.playerConditionService = playerConditionService;
+	public static void setPlayerConditionsService(PlayerConditionsService playerConditionService) {
+		GameServiceImpl.playerConditionService = playerConditionService;
 	}
 
 }

@@ -9,17 +9,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 import enums.TypeFilter;
-import mock.PlayerConditionImplMock;
+import mock.playerconditionsservice.PlayerConditionServiceMockForGameServiceTest;
 import utils.GameServiceImpl;
 
-public class GameTest {
+public class GameServiceTest {
 
 	private static GameServiceImpl gameService;
 
 	@Before
 	public void setup() {
 		gameService = new GameServiceImpl();
-		gameService.setPlayerConditionsService(new PlayerConditionImplMock());
+		GameServiceImpl.setPlayerConditionsService(new PlayerConditionServiceMockForGameServiceTest());
 	}
 
 	@Test

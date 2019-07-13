@@ -6,7 +6,7 @@ import service.PlayerConditionsService;
 
 public class PlayerConditionsServiceImpl implements PlayerConditionsService {
 	
-	private GameService gameService;
+	private static GameService gameService = new GameServiceImpl();
 
 	private boolean chooseClassCondition(int result) {
         return (result > 0 && result < 4);
@@ -66,7 +66,7 @@ public class PlayerConditionsServiceImpl implements PlayerConditionsService {
 		return finalResponse;
 	}
     
-    public void setGameService(GameService gameService) {
-		this.gameService = gameService;
+    public static void setGameService(GameService gameService) {
+		PlayerConditionsServiceImpl.gameService = gameService;
 	}
 }

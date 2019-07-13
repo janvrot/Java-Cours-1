@@ -1,6 +1,8 @@
 package utils;
 
 import players.Player;
+import service.GameService;
+import service.PartyGameService;
 
 import static enums.TypeFilter.CHOOSEATACK;
 import static enums.TypeFilter.CHOOSETARGET;
@@ -15,13 +17,11 @@ import enums.TypeKeys;
 import enums.TypeStat;
 import enums.TypeTarget;
 
-public class PartyGame {
+public class PartyGameServiceImpl implements PartyGameService {
 
-	private PartyGame() {
+	private static GameService gameService = new GameServiceImpl();
 
-	}
-
-	public static void playGame(List<Player> players) {
+	public void playGame(List<Player> players) {
 		List<Player> allPlayers = players;
 		Player player = null;
 		while (allPlayers.size() > 1) {
@@ -29,7 +29,7 @@ public class PartyGame {
 				if (!checkLastPlayer(player, players.get(i))) {
 					player = players.get(i);
 					GameMessage.playerTurn(player);
-					int chooseAttack = GameServiceImpl.addQuestion(GameMessage.chooseAttack(player), CHOOSEATACK);
+					int chooseAttack = gameService.addQuestion(GameMessage.chooseAttack(player), CHOOSEATACK);
 					List<Map<TypeKeys, Object>> attack = doAttack(chooseAttack, player);
 					for (Map<TypeKeys, Object> infos : attack) {
 						int targetPosition = checkTarget(allPlayers, player, (TypeTarget) infos.get(TARGET));
@@ -46,14 +46,14 @@ public class PartyGame {
 		}
 	}
 
-	public static boolean checkLastPlayer(Player lastPlayer, Player currentPlayer) {
+	public boolean checkLastPlayer(Player lastPlayer, Player currentPlayer) {
 		if (lastPlayer != null)
 			return lastPlayer.getName() == currentPlayer.getName();
 		else
 			return false;
 	}
 
-	public static List<Map<TypeKeys, Object>> doAttack(int result, Player player) {
+	public List<Map<TypeKeys, Object>> doAttack(int result, Player player) {
 		List<Map<TypeKeys, Object>> attack;
 		if (result == 1) {
 			attack = player.basicAttack();
@@ -63,7 +63,7 @@ public class PartyGame {
 		return attack;
 	}
 
-	public static int checkTarget(List<Player> allPlayers, Player player, TypeTarget target) {
+	public int checkTarget(List<Player> allPlayers, Player player, TypeTarget target) {
 		switch (target) {
 		case MYSELF:
 			return findMe(allPlayers, player);
@@ -74,7 +74,7 @@ public class PartyGame {
 		}
 	}
 
-	public static int findMe(List<Player> allPlayers, Player player) {
+	public int findMe(List<Player> allPlayers, Player player) {
 		int result = 0;
 		for (int i = 0; i < allPlayers.size(); i++) {
 			if (allPlayers.get(i) == player) {
@@ -84,7 +84,7 @@ public class PartyGame {
 		return result;
 	}
 
-	public static int findOther(List<Player> allPlayers, Player player) {
+	public int findOther(List<Player> allPlayers, Player player) {
 		if (allPlayers.size() == 2) {
 			int result = 0;
 			for (int i = 0; i < allPlayers.size(); i++) {
@@ -93,17 +93,18 @@ public class PartyGame {
 				}
 			}
 			return result;
-		} else {
-			int target = GameServiceImpl.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
+		} else if(allPlayers.size() > 2) {
+			int target = gameService.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
 			while (!verifyTarget(allPlayers, player, target)) {
 				System.out.println("Cible invalide !");
-				target = GameServiceImpl.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
+				target = gameService.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
 			}
 			return target;
-		}
+		} else
+			return 0;
 	}
 
-	public static boolean verifyTarget(List<Player> allPlayers, Player player, int target) {
+	public boolean verifyTarget(List<Player> allPlayers, Player player, int target) {
 		try {
 			return (allPlayers.get(target) != player);
 		} catch (IndexOutOfBoundsException e) {
@@ -111,7 +112,7 @@ public class PartyGame {
 		}
 	}
 
-	public static List<Player> changeStat(List<Player> players, int targetPosition, int amount, TypeAction action,
+	public List<Player> changeStat(List<Player> players, int targetPosition, int amount, TypeAction action,
 			TypeStat stat) {
 
 		Player updatePlayer = doAction(action, players.get(targetPosition), amount, stat);
@@ -127,7 +128,7 @@ public class PartyGame {
 		return players;
 	}
 
-	public static List<Player> removeDeadPlayer(List<Player> players) {
+	public List<Player> removeDeadPlayer(List<Player> players) {
 		for (Iterator<Player> iterator = players.iterator(); iterator.hasNext();) {
 			Player player = iterator.next();
 			if (player.getLife() <= 0) {
@@ -137,7 +138,7 @@ public class PartyGame {
 		return players;
 	}
 
-	public static Player doAction(TypeAction action, Player player, int amount, TypeStat stat) {
+	public Player doAction(TypeAction action, Player player, int amount, TypeStat stat) {
 		if (action == TypeAction.DAMAGE) {
 			player.setLife(player.getLife() - minimalValue(amount));
 			System.out.println(player.getName() + " a perdu " + minimalValue(amount) + " points de vie");
@@ -147,7 +148,7 @@ public class PartyGame {
 		return player;
 	}
 
-	public static Player doBoost(Player player, int amount, TypeStat stat) {
+	public Player doBoost(Player player, int amount, TypeStat stat) {
 		switch (stat) {
 		case LIFE:
 			player.setLife(player.getLife() + minimalValue(amount));
@@ -172,10 +173,14 @@ public class PartyGame {
 		return player;
 	}
 
-	public static int minimalValue(int amount) {
+	public int minimalValue(int amount) {
 		if (amount == 0)
 			return 1;
 		else
 			return amount;
+	}
+	
+	public static void setGameService(GameService gameService) {
+		PartyGameServiceImpl.gameService = gameService;
 	}
 }

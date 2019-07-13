@@ -4,7 +4,6 @@ import static enums.TypeFilter.CHOOSECLASS;
 import static enums.TypeFilter.CHOOSELVL;
 import static enums.TypeFilter.CHOOSEPLAYERS;
 import static enums.TypeFilter.CHOOSESTATS;
-import static utils.GameServiceImpl.addQuestion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,14 +13,16 @@ import players.Guerrier;
 import players.Mage;
 import players.Player;
 import players.Rodeur;
+import service.GameService;
+import service.SetupService;
 
-public class Setup {
+public class SetupServiceImpl implements SetupService {
+
+	private static GameService gameService = new GameServiceImpl();
 	
-	private Setup () {	
-	}
-	
-	public static List<Player> setupGame() {
-		int nbPlayers = addQuestion("Choisissez le nombre de joueurs", CHOOSEPLAYERS);
+	@Override
+	public List<Player> setupGame() {
+		int nbPlayers = gameService.addQuestion("Choisissez le nombre de joueurs", CHOOSEPLAYERS);
 		List<Player> players = new ArrayList<>(nbPlayers);
 		for (int i = 0; i < nbPlayers; i++) {
 			GameMessage.chooseClassMessage(i+1);
@@ -35,8 +36,8 @@ public class Setup {
 		return players;
 	}
 	
-	public static Player chooseClass() {
-		int playerType = addQuestion("Choisissez une classe (1:Guerrier, 2:Rodeur, 3:Mage)", CHOOSECLASS);
+	public Player chooseClass() {
+		int playerType = gameService.addQuestion("Choisissez une classe (1:Guerrier, 2:Rodeur, 3:Mage)", CHOOSECLASS);
 		switch (playerType) {
 		case 1:
 			return new Guerrier();
@@ -45,12 +46,12 @@ public class Setup {
 		case 3:
 			return new Mage();
 		default:
-			return new Guerrier();
+			return null;
 		}
 	}
 
-	public static Player chooseStat(Player player) {
-		int lvlStat = addQuestion("Choisissez votre niveau (entre 1 et 100)", CHOOSELVL);
+	public Player chooseStat(Player player) {
+		int lvlStat = gameService.addQuestion("Choisissez votre niveau (entre 1 et 100)", CHOOSELVL);
 		player.setLvl(lvlStat);
 		player.setLife(player.getLvl() * 5);
 		List<Integer> points = skillPointLeft(player);
@@ -60,7 +61,7 @@ public class Setup {
 		return player;
 	}
 
-	public static List<Integer> skillPointLeft(Player player) {
+	public List<Integer> skillPointLeft(Player player) {
 		GameMessage.chooseStatMessage(player);
 		List<String> questions = Arrays.asList("Choisissez votre force", "Choisissez votre intelligence",
 				"Choisisez votre Agilité");
@@ -69,7 +70,7 @@ public class Setup {
 		while (pointsLeft > 0) {
 			for (int i = 0; i < questions.size(); i++) {
 				if (pointsLeft != 0) {
-					int points = addQuestion(questions.get(i), CHOOSESTATS);
+					int points = gameService.addQuestion(questions.get(i), CHOOSESTATS);
 					if (points <= pointsLeft) {
 						values.set(i, values.get(i) + points);
 						pointsLeft = pointsLeft - points;
@@ -82,6 +83,10 @@ public class Setup {
 			}
 		}
 		return values;
+	}
+	
+	public static void setGameService(GameService gameService) {
+		SetupServiceImpl.gameService = gameService;
 	}
 }
 

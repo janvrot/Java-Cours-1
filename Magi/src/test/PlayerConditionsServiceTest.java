@@ -15,17 +15,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 import enums.TypeFilter;
-import mock.GameImplMock;
+import mock.gameservice.GameServiceMockForPlayerConditionServiceTest;
 import utils.PlayerConditionsServiceImpl;
 
-public class PlayerConditionsTest {
+public class PlayerConditionsServiceTest {
 
 	private static PlayerConditionsServiceImpl playerConditionsService;
 
 	@Before
 	public void setup() {
 		playerConditionsService = new PlayerConditionsServiceImpl();
-		playerConditionsService.setGameService(new GameImplMock());
+		PlayerConditionsServiceImpl.setGameService(new GameServiceMockForPlayerConditionServiceTest());
 	}
 
 	@Test
@@ -76,10 +76,6 @@ public class PlayerConditionsTest {
 	@Test
 	public void testCheckCondition() {
 		assertEquals(1, playerConditionsService.checkCondition("test", CHOOSETARGET));
-		
-		for (int i = 0; i < 2; i++) {
-			
-		}
 	}
 
 }
