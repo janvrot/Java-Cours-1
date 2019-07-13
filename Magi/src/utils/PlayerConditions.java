@@ -4,35 +4,31 @@ import enums.TypeFilter;
 
 public final class PlayerConditions {
 
-    private PlayerConditions() {
-
-    }
-
-    public static boolean chooseClassCondition(int result) {
+    public boolean chooseClassCondition(int result) {
         return (result > 0 && result < 4);
     }
 
-    public static boolean choosePlayers(int result) {
+    public boolean choosePlayers(int result) {
         return result > 1;
     }
 
-    public static boolean chooseLvl(int result) {
+    public boolean chooseLvl(int result) {
         return (result > 0 && result <= 100);
     }
 
-    public static boolean chooseStats(int result) {
+    public boolean chooseStats(int result) {
         return (result >= 0 && result <= 100);
     }
 
-    public static boolean chooseAttack(int result) {
+    public boolean chooseAttack(int result) {
         return (result > 0 && result < 3);
     }
 
-    public static boolean chooseTarget(int result) {
+    public boolean chooseTarget(int result) {
         return (result > 0);
     }
 
-    public static boolean addFilter(int response, TypeFilter filter) {
+    public boolean addFilter(int response, TypeFilter filter) {
         if (filter != null && response != -1) {
             switch (filter) {
                 case CHOOSEPLAYERS:

@@ -14,18 +14,12 @@ import enums.TypeFilter;
 public class Game {
 
 	/**
-	 * Bloquage de l'instanciation
-	 */
-	private Game() {
-	}
-
-	/**
 	 * Récupère l'entrée dans le terminal
 	 *
 	 * @return La valeur de l'entrée
 	 */
 	@SuppressWarnings("resource")
-	public static int getResponse() {
+	public int getResponse() {
 		try {
 			Scanner sc = new Scanner(System.in);
 			int response = sc.nextInt();
@@ -44,10 +38,17 @@ public class Game {
 	 *            Le filtre appliqué à la réponse
 	 * @return La valeur entrée dans le terminal
 	 */
-	public static int addQuestion(String question, TypeFilter filter) {
+	public int addQuestion(int response, String question, TypeFilter filter) {
 		System.out.println(question);
-		int finalResponse = getResponse();
-		while (!PlayerConditions.addFilter(finalResponse, filter)) {
+		while checkCondition(response, question, filter)
+		return ;
+	}
+	
+	public int checkCondition(int response, String question, TypeFilter filter) {
+		int finalResponse = response;
+		PlayerConditions conditions = new PlayerConditions();
+		
+		while (!conditions.addFilter(finalResponse, filter)) {
 			System.out.println("Paramètre invalide");
 			System.out.println(question);
 			finalResponse = getResponse();
