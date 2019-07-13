@@ -12,7 +12,7 @@ public class Main {
         while (response == 1) {
             List<Player> players = Setup.setupGame();
             PartyGame.playGame(players);
-            response = Game.addQuestion("Voulez-vous refaire une partie ? 1:OUI, 2:NON", TypeFilter.CHOOSEATACK);
+            response = GameServiceImpl.addQuestion("Voulez-vous refaire une partie ? 1:OUI, 2:NON", TypeFilter.CHOOSEATACK);
         }
         System.out.println("Merci d'avoir joué !! :)");
     }

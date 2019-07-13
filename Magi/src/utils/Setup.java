@@ -4,7 +4,7 @@ import static enums.TypeFilter.CHOOSECLASS;
 import static enums.TypeFilter.CHOOSELVL;
 import static enums.TypeFilter.CHOOSEPLAYERS;
 import static enums.TypeFilter.CHOOSESTATS;
-import static utils.Game.addQuestion;
+import static utils.GameServiceImpl.addQuestion;
 
 import java.util.ArrayList;
 import java.util.Arrays;

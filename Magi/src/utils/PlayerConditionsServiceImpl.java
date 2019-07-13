@@ -1,30 +1,34 @@
 package utils;
 
 import enums.TypeFilter;
+import service.GameService;
+import service.PlayerConditionsService;
 
-public final class PlayerConditions {
+public class PlayerConditionsServiceImpl implements PlayerConditionsService {
+	
+	private GameService gameService;
 
-    public boolean chooseClassCondition(int result) {
+	private boolean chooseClassCondition(int result) {
         return (result > 0 && result < 4);
     }
 
-    public boolean choosePlayers(int result) {
+    private boolean choosePlayers(int result) {
         return result > 1;
     }
 
-    public boolean chooseLvl(int result) {
+    private boolean chooseLvl(int result) {
         return (result > 0 && result <= 100);
     }
 
-    public boolean chooseStats(int result) {
+    private boolean chooseStats(int result) {
         return (result >= 0 && result <= 100);
     }
 
-    public boolean chooseAttack(int result) {
+    private boolean chooseAttack(int result) {
         return (result > 0 && result < 3);
     }
 
-    public boolean chooseTarget(int result) {
+    private boolean chooseTarget(int result) {
         return (result > 0);
     }
 
@@ -50,4 +54,19 @@ public final class PlayerConditions {
             return response != -1;
         }
     }
+    
+    @Override
+	public int checkCondition(String question, TypeFilter filter) {
+		int finalResponse = gameService.getResponse();
+		while (!addFilter(finalResponse, filter)) {
+			System.out.println("Paramètre invalide");
+			System.out.println(question);
+			finalResponse = gameService.getResponse();
+		}
+		return finalResponse;
+	}
+    
+    public void setGameService(GameService gameService) {
+		this.gameService = gameService;
+	}
 }

@@ -29,7 +29,7 @@ public class PartyGame {
 				if (!checkLastPlayer(player, players.get(i))) {
 					player = players.get(i);
 					GameMessage.playerTurn(player);
-					int chooseAttack = Game.addQuestion(GameMessage.chooseAttack(player), CHOOSEATACK);
+					int chooseAttack = GameServiceImpl.addQuestion(GameMessage.chooseAttack(player), CHOOSEATACK);
 					List<Map<TypeKeys, Object>> attack = doAttack(chooseAttack, player);
 					for (Map<TypeKeys, Object> infos : attack) {
 						int targetPosition = checkTarget(allPlayers, player, (TypeTarget) infos.get(TARGET));
@@ -94,10 +94,10 @@ public class PartyGame {
 			}
 			return result;
 		} else {
-			int target = Game.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
+			int target = GameServiceImpl.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
 			while (!verifyTarget(allPlayers, player, target)) {
 				System.out.println("Cible invalide !");
-				target = Game.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
+				target = GameServiceImpl.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
 			}
 			return target;
 		}
