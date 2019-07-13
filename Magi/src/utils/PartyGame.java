@@ -1,30 +1,19 @@
-/**
- * <p>
- * Copyright © 2019 THALES Communications, France. All rights reserved.
- * </p>
- * <p>
- * Ce document est la propriété de THALES Communications, France,
- * il ne peut être ni reproduit, ni utilisé, ni communiqué, ni distribué
- * à  des tiers sans son autorisation préalable.
- * </p>
- * <p>
- * Créé le 20 mai 2019.
- * </p>
- */
 package utils;
 
-import main.enums.TypeAction;
-import main.enums.TypeKeys;
-import main.enums.TypeStat;
-import main.enums.TypeTarget;
 import players.Player;
 
+import static enums.TypeFilter.CHOOSEATACK;
+import static enums.TypeFilter.CHOOSETARGET;
+import static enums.TypeKeys.*;
+
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import static main.enums.TypeFilter.CHOOSEATACK;
-import static main.enums.TypeFilter.CHOOSETARGET;
-import static main.enums.TypeKeys.*;
+import enums.TypeAction;
+import enums.TypeKeys;
+import enums.TypeStat;
+import enums.TypeTarget;
 
 public class PartyGame {
 
@@ -34,15 +23,19 @@ public class PartyGame {
 
 	public static void playGame(List<Player> players) {
 		List<Player> allPlayers = players;
+		Player player = null;
 		while (allPlayers.size() > 1) {
-			for (Player player : allPlayers) {
-			    GameMessage.playerTurn(player);
-				int chooseAttack = Game.addQuestion(GameMessage.chooseAttack(player), CHOOSEATACK);
-				List<Map<TypeKeys, Object>> attack = doAttack(chooseAttack, player);
-				for (Map<TypeKeys, Object> infos : attack) {
-					int targetPosition = checkTarget(allPlayers, player, (TypeTarget) infos.get(TARGET));
-					changeStat(allPlayers, targetPosition, (Integer) infos.get(AMOUNT),
-							(TypeAction) infos.get(ACTION), (TypeStat) infos.get(STAT));
+			for (int i = 0; i < players.size(); i++) {
+				if (!checkLastPlayer(player, players.get(i))) {
+					player = players.get(i);
+					GameMessage.playerTurn(player);
+					int chooseAttack = Game.addQuestion(GameMessage.chooseAttack(player), CHOOSEATACK);
+					List<Map<TypeKeys, Object>> attack = doAttack(chooseAttack, player);
+					for (Map<TypeKeys, Object> infos : attack) {
+						int targetPosition = checkTarget(allPlayers, player, (TypeTarget) infos.get(TARGET));
+						changeStat(allPlayers, targetPosition, (Integer) infos.get(AMOUNT),
+								(TypeAction) infos.get(ACTION), (TypeStat) infos.get(STAT));
+					}
 				}
 			}
 		}
@@ -51,6 +44,13 @@ public class PartyGame {
 		} else {
 			System.out.println("Partie terminée sans vainqueur !!");
 		}
+	}
+
+	public static boolean checkLastPlayer(Player lastPlayer, Player currentPlayer) {
+		if (lastPlayer != null)
+			return lastPlayer.getName() == currentPlayer.getName();
+		else
+			return false;
 	}
 
 	public static List<Map<TypeKeys, Object>> doAttack(int result, Player player) {
@@ -97,9 +97,9 @@ public class PartyGame {
 			int target = Game.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
 			while (!verifyTarget(allPlayers, player, target)) {
 				System.out.println("Cible invalide !");
-				target = Game.addQuestion("Qui est votre cible ?", CHOOSETARGET);
+				target = Game.addQuestion("Qui est votre cible ?", CHOOSETARGET) - 1;
 			}
-			return target ;
+			return target;
 		}
 	}
 
@@ -118,7 +118,21 @@ public class PartyGame {
 		if (updatePlayer.getLife() > 0) {
 			players.set(targetPosition, updatePlayer);
 		} else {
-			players.remove(targetPosition);
+			System.out.println(players.get(targetPosition).getName() + " est mort !!!!");
+			for (int i = targetPosition; i < players.size() - 1; i++) {
+				players.set(i, players.get(i + 1));
+			}
+			players.remove(players.size() - 1);
+		}
+		return players;
+	}
+
+	public static List<Player> removeDeadPlayer(List<Player> players) {
+		for (Iterator<Player> iterator = players.iterator(); iterator.hasNext();) {
+			Player player = iterator.next();
+			if (player.getLife() <= 0) {
+				iterator.remove();
+			}
 		}
 		return players;
 	}
@@ -140,25 +154,25 @@ public class PartyGame {
 			if (player.getLife() > player.getLvl() * 5) {
 				player.setLife(player.getLvl() * 5);
 			}
-            System.out.println(player.getName() + " a été soigné de " + minimalValue(amount) + " points de vie");
+			System.out.println(player.getName() + " a été soigné de " + minimalValue(amount) + " points de vie");
 			break;
 		case AGILITY:
 			player.setAgility(player.getAgility() + minimalValue(amount));
-            System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points d'agilité");
+			System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points d'agilité");
 			break;
 		case INTELLIGENCE:
 			player.setIntelligence(player.getIntelligence() + minimalValue(amount));
-            System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points d'intelligence");
+			System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points d'intelligence");
 			break;
 		case STRENGTH:
 			player.setStrength(player.getStrength() + minimalValue(amount));
-            System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points de force");
+			System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points de force");
 			break;
 		}
 		return player;
 	}
 
-	private static int minimalValue(int amount) {
+	public static int minimalValue(int amount) {
 		if (amount == 0)
 			return 1;
 		else

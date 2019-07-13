@@ -1,21 +1,12 @@
-/**
- * <p>
- * Copyright © 2019 THALES Communications, France. All rights reserved.
- * </p>
- * <p>
- * Ce document est la propriété de THALES Communications, France,
- * il ne peut être ni reproduit, ni utilisé, ni communiqué, ni distribué
- * à  des tiers sans son autorisation préalable.
- * </p>
- * <p>
- * Créé le 20 mai 2019.
- * </p>
- */
 package utils;
 
-import static main.enums.TypeFilter.*;
+import static enums.TypeFilter.CHOOSECLASS;
+import static enums.TypeFilter.CHOOSELVL;
+import static enums.TypeFilter.CHOOSEPLAYERS;
+import static enums.TypeFilter.CHOOSESTATS;
 import static utils.Game.addQuestion;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,8 +17,22 @@ import players.Rodeur;
 
 public class Setup {
 	
-	private Setup () {
-		
+	private Setup () {	
+	}
+	
+	public static List<Player> setupGame() {
+		int nbPlayers = addQuestion("Choisissez le nombre de joueurs", CHOOSEPLAYERS);
+		List<Player> players = new ArrayList<>(nbPlayers);
+		for (int i = 0; i < nbPlayers; i++) {
+			GameMessage.chooseClassMessage(i+1);
+			Player player = chooseClass();
+			player.setName("Joueur " + (i + 1));
+			chooseStat(player);
+			players.add(player);
+			System.out.println(player);
+		}
+		System.out.println("\n\nDEBUT DE LA PARTIE\n\n");
+		return players;
 	}
 	
 	public static Player chooseClass() {

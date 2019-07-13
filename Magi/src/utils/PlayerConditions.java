@@ -1,19 +1,6 @@
-/**
- * <p>
- * Copyright © 2019 THALES Communications, France. All rights reserved.
- * </p>
- * <p>
- * Ce document est la propriété de THALES Communications, France,
- * il ne peut être ni reproduit, ni utilisé, ni communiqué, ni distribué
- * à  des tiers sans son autorisation préalable.
- * </p>
- * <p>
- * Créé le 17 mai 2019.
- * </p>
- */
 package utils;
 
-import main.enums.TypeFilter;
+import enums.TypeFilter;
 
 public final class PlayerConditions {
 

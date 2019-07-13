@@ -1,37 +1,29 @@
 package utils;
 
-import static main.enums.TypeFilter.CHOOSEPLAYERS;
-import static utils.Setup.chooseClass;
-import static utils.Setup.chooseStat;
-
-import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
-import main.enums.TypeFilter;
-import players.Player;
+import enums.TypeFilter;
 
+/**
+ * Permet de créer des inputs pendant la partie
+ *
+ * @author Antoine Janvrot
+ * @version 22 mai 2019
+ */
 public class Game {
 
+	/**
+	 * Bloquage de l'instanciation
+	 */
 	private Game() {
 	}
 
-	public static List<Player> setupGame() {
-		int nbPlayers = addQuestion("Choisissez le nombre de joueurs", CHOOSEPLAYERS);
-		List<Player> players = new ArrayList<>(nbPlayers);
-		for (int i = 0; i < nbPlayers; i++) {
-			GameMessage.chooseClassMessage(i+1);
-			Player player = chooseClass();
-			player.setName("Joueur " + (i + 1));
-			player = chooseStat(player);
-			players.add(player);
-			System.out.println(player);
-		}
-		System.out.println("\n\nDEBUT DE LA PARTIE\n\n");
-		return players;
-	}
-
+	/**
+	 * Récupère l'entrée dans le terminal
+	 *
+	 * @return La valeur de l'entrée
+	 */
 	@SuppressWarnings("resource")
 	public static int getResponse() {
 		try {
@@ -41,9 +33,17 @@ public class Game {
 		} catch (InputMismatchException e) {
 			return -1;
 		}
-
 	}
 
+	/**
+	 * Pose une question et filtre la réponse
+	 *
+	 * @param question
+	 *            La question posée
+	 * @param filter
+	 *            Le filtre appliqué à la réponse
+	 * @return La valeur entrée dans le terminal
+	 */
 	public static int addQuestion(String question, TypeFilter filter) {
 		System.out.println(question);
 		int finalResponse = getResponse();

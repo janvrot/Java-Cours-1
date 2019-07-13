@@ -1,30 +1,63 @@
 package players;
 
-import static main.enums.TypeAction.DAMAGE;
-import static main.enums.TypeTarget.MYSELF;
-import static main.enums.TypeTarget.OTHER;
+import static enums.TypeAction.DAMAGE;
+import static enums.TypeTarget.MYSELF;
+import static enums.TypeTarget.OTHER;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-import main.enums.TypeKeys;
+import enums.TypeKeys;
 
+/**
+ * Génère un objet Guerrier
+ *
+ * @author Antoine Janvrot
+ * @version 22 mai 2019
+ */
 public class Guerrier extends Player {
 
+	/**
+	 * Instanciation du Guerrier sans paramètres
+	 */
 	public Guerrier() {
 	}
 
+	/**
+	 * Instanciation du Guerrier avec paramètres
+	 * 
+	 * @param lvl
+	 * 		Le niveau du Guerrier
+	 * @param life
+	 * 		Les points de vie du Guerrier
+	 * @param strength
+	 * 		La force du Guerrier
+	 * @param agility
+	 * 		L'agilité du Guerrier
+	 * @param intelligence
+	 * 		L'intelligence du Guerrier
+	 * @param name
+	 * 
+	 */
 	public Guerrier(int lvl, int life, int strength, int agility, int intelligence, String name) {
 		super(lvl, life, strength, agility, intelligence, name);
 	}
 
+	/**
+	 * 
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String toString() {
 		return "Guerrier{} " + super.toString();
 	}
 
+	/**
+	 * 
+	 * {@inheritDoc}
+	 */
 	@Override
 	public List<Map<TypeKeys, Object>> basicAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();
@@ -34,6 +67,10 @@ public class Guerrier extends Player {
 		return result;
 	}
 
+	/**
+	 * 
+	 * {@inheritDoc}
+	 */
 	@Override
 	public List<Map<TypeKeys, Object>> specialAttack() {
 		List<Map<TypeKeys, Object>> result = new ArrayList<>();

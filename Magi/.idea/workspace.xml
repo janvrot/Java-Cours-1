@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="761b0ff3-96a7-423b-9b9b-cd14a5601784" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeKeys.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeTarget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/main/enums/TypeTarget.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/players/Guerrier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/players/Guerrier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/players/Mage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/players/Mage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/players/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/players/Rodeur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/players/Rodeur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/utils/PartyGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/utils/PartyGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/utils/PlayerConditions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/utils/PlayerConditions$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/utils/PlayerConditions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/utils/PlayerConditions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Magi/utils/Setup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Magi/utils/Setup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/enums/TypeFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/enums/TypeFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/players/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/GameMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/GameMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/PartyGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PartyGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/PlayerConditions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PlayerConditions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Setup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Setup.java" afterDir="false" />
-    </list>
+    <list default="true" id="761b0ff3-96a7-423b-9b9b-cd14a5601784" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,14 +11,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/PartyGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="-198">
               <caret line="128" column="84" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/players/Guerrier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -239,7 +226,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558475025411" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563038314242" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -266,7 +253,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Magi" />
@@ -292,7 +279,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -309,7 +295,7 @@
       <updated>1553353140459</updated>
       <workItem from="1553353141966" duration="381000" />
       <workItem from="1555532676916" duration="275000" />
-      <workItem from="1556045753585" duration="15911000" />
+      <workItem from="1556045753585" duration="16377000" />
     </task>
     <task id="LOCAL-00001" summary="Tests des actions selon le cas">
       <created>1556053639092</created>
@@ -322,11 +308,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16567000" />
+    <option name="totallyTimeSpent" value="17033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -337,7 +322,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -468,13 +453,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/players/Guerrier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="37" column="56" lean-forward="true" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/enums/TypeStat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -577,11 +555,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/PartyGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="-198">
           <caret line="128" column="84" selection-start-line="128" selection-start-column="84" selection-end-line="128" selection-end-column="84" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/players/Guerrier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
         </state>
       </provider>
     </entry>

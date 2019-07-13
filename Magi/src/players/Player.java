@@ -1,129 +1,230 @@
 package players;
 
+import static enums.TypeKeys.*;
+
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import main.enums.TypeAction;
-import main.enums.TypeKeys;
-import main.enums.TypeStat;
-import main.enums.TypeTarget;
-
-import static main.enums.TypeKeys.*;
+import enums.TypeAction;
+import enums.TypeKeys;
+import enums.TypeStat;
+import enums.TypeTarget;
 
 /**
- * Class représentant les statistiques de base du joueur
+ * Class abstraite représentant les statistiques de base du joueur
+ *
+ * @author Antoine Janvrot
+ * @version 3 juin 2019
  */
 public abstract class Player {
 
-    private int lvl;
-    private int life;
-    private int strength;
-    private int agility;
-    private int intelligence;
-    private String name;
+	private int lvl;
+	private int life;
+	private int strength;
+	private int agility;
+	private int intelligence;
+	private String name;
 
-    public Player() {
+	/**
+	 * Instanciation du Player sans paramètres
+	 */
+	public Player() {
 
-    }
+	}
 
-    public Player(int lvl, int life, int strength, int agility, int intelligence, String name) {
-        this.lvl = lvl;
-        this.life = life;
-        this.strength = strength;
-        this.agility = agility;
-        this.intelligence = intelligence;
-        this.name = name;
-    }
+	/**
+	 * Instanciation du Player avec paramètres
+	 * 
+	 * @param lvl
+	 *            Le niveau du Player
+	 * @param life
+	 *            Les points de vie du Player
+	 * @param strength
+	 *            La force du Player
+	 * @param agility
+	 *            L'agilité du Player
+	 * @param intelligence
+	 *            L'intelligence du Player
+	 * @param name
+	 *            le nom du Player
+	 */
+	public Player(int lvl, int life, int strength, int agility, int intelligence, String name) {
+		this.lvl = lvl;
+		this.life = life;
+		this.strength = strength;
+		this.agility = agility;
+		this.intelligence = intelligence;
+		this.name = name;
+	}
 
-    public String getName() {
-        return name;
-    }
+	/**
+	 * @return {@link #name}
+	 */
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	/**
+	 * @param name
+	 *            {@link #name}
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public int getLvl() {
-        return lvl;
-    }
+	/**
+	 * @return {@link #lvl}
+	 */
+	public int getLvl() {
+		return lvl;
+	}
 
-    public void setLvl(int lvl) {
-        this.lvl = lvl;
-    }
+	/**
+	 * @param lvl
+	 *            {@link #lvl}
+	 */
+	public void setLvl(int lvl) {
+		this.lvl = lvl;
+	}
 
-    public int getLife() {
-        return life;
-    }
+	/**
+	 * @return {@link #life}
+	 */
+	public int getLife() {
+		return life;
+	}
 
-    public void setLife(int life) {
-        this.life = life;
-    }
+	/**
+	 * @param life
+	 *            {@link #life}
+	 */
+	public void setLife(int life) {
+		this.life = life;
+	}
 
-    public int getStrength() {
-        return strength;
-    }
+	/**
+	 * @return {@link #strength}
+	 */
+	public int getStrength() {
+		return strength;
+	}
 
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
+	/**
+	 * @param strength
+	 *            {@link #strength}
+	 */
+	public void setStrength(int strength) {
+		this.strength = strength;
+	}
 
-    public int getAgility() {
-        return agility;
-    }
+	/**
+	 * @return {@link #agility}
+	 */
+	public int getAgility() {
+		return agility;
+	}
 
-    public void setAgility(int agility) {
-        this.agility = agility;
-    }
+	/**
+	 * @param agility
+	 *            {@link #agility}
+	 */
+	public void setAgility(int agility) {
+		this.agility = agility;
+	}
 
-    public int getIntelligence() {
-        return intelligence;
-    }
+	/**
+	 * @return {@link #intelligence}
+	 */
+	public int getIntelligence() {
+		return intelligence;
+	}
 
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
-    }
+	/**
+	 * @param intelligence
+	 *            {@link #intelligence}
+	 */
+	public void setIntelligence(int intelligence) {
+		this.intelligence = intelligence;
+	}
 
-    public abstract List<Map<TypeKeys, Object>> basicAttack();
+	/**
+	 * Méthode abstraite pour les attaques de base des joueurs
+	 *
+	 * @return Les différents paramètres liés à une attaque de base
+	 */
+	public abstract List<Map<TypeKeys, Object>> basicAttack();
 
-    public abstract List<Map<TypeKeys, Object>> specialAttack();
+	/**
+	 * Méthode abstraite pour les attaques spéciales des joueurs
+	 *
+	 * @return Les différents paramètres liés à une attaque spéciales
+	 */
+	public abstract List<Map<TypeKeys, Object>> specialAttack();
 
-    public Map<TypeKeys, Object> buildAction(int amount, TypeAction action, TypeTarget target, TypeStat stat) {
-        Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
-        actions.put(AMOUNT, amount);
-        actions.put(ACTION, action);
-        actions.put(TARGET, target);
-        actions.put(STAT, stat);
-        return actions;
-    }
+	/**
+	 * Regroupe les différents paramètres liés à une attaque
+	 *
+	 * @param amount
+	 *            La quantité de points pouvant être retirés/ajoutés
+	 * @param action
+	 *            Le type d'action effectuée
+	 * @param target
+	 *            La cible de l'attaque
+	 * @param stat
+	 *            La statistique ciblée par l'attaque
+	 * @return Les différents paramètres liés à une attaque
+	 */
+	public Map<TypeKeys, Object> buildAction(int amount, TypeAction action, TypeTarget target, TypeStat stat) {
+		Map<TypeKeys, Object> actions = new EnumMap<>(TypeKeys.class);
+		actions.put(AMOUNT, amount);
+		actions.put(ACTION, action);
+		actions.put(TARGET, target);
+		actions.put(STAT, stat);
+		return actions;
+	}
 
-    @Override
-    public String toString() {
-        return "Player{" +
-                "lvl=" + lvl +
-                ", life=" + life +
-                ", strength=" + strength +
-                ", agility=" + agility +
-                ", intelligence=" + intelligence +
-                ", name='" + name + '\'' +
-                '}';
-    }
+	/**
+	 * 
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString() {
+		return "Player{" +
+				"lvl=" + lvl +
+				", life=" + life +
+				", strength=" + strength +
+				", agility=" + agility +
+				", intelligence=" + intelligence +
+				", name='" + name + '\'' +
+				'}';
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Player)) return false;
-        Player player = (Player) o;
-        return getLvl() == player.getLvl() &&
-                getLife() == player.getLife() &&
-                getStrength() == player.getStrength() &&
-                getAgility() == player.getAgility() &&
-                getIntelligence() == player.getIntelligence();
-    }
+	/**
+	 * 
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (!(o instanceof Player))
+			return false;
+		Player player = (Player) o;
+		return getLvl() == player.getLvl() &&
+				getLife() == player.getLife() &&
+				getStrength() == player.getStrength() &&
+				getAgility() == player.getAgility() &&
+				getIntelligence() == player.getIntelligence();
+	}
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getLvl(), getLife(), getStrength(), getAgility(), getIntelligence());
-    }
+	/**
+	 * 
+	 * {@inheritDoc}
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(getLvl(), getLife(), getStrength(), getAgility(), getIntelligence());
+	}
 }
