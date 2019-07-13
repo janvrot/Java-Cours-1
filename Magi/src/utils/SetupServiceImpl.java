@@ -19,13 +19,14 @@ import service.SetupService;
 public class SetupServiceImpl implements SetupService {
 
 	private static GameService gameService = new GameServiceImpl();
+	private static GameMessage gameMessage = new GameMessage();
 	
 	@Override
 	public List<Player> setupGame() {
 		int nbPlayers = gameService.addQuestion("Choisissez le nombre de joueurs", CHOOSEPLAYERS);
 		List<Player> players = new ArrayList<>(nbPlayers);
 		for (int i = 0; i < nbPlayers; i++) {
-			GameMessage.chooseClassMessage(i+1);
+			gameMessage.chooseClassMessage(i+1);
 			Player player = chooseClass();
 			player.setName("Joueur " + (i + 1));
 			chooseStat(player);
@@ -62,7 +63,7 @@ public class SetupServiceImpl implements SetupService {
 	}
 
 	public List<Integer> skillPointLeft(Player player) {
-		GameMessage.chooseStatMessage(player);
+		gameMessage.chooseStatMessage(player);
 		List<String> questions = Arrays.asList("Choisissez votre force", "Choisissez votre intelligence",
 				"Choisisez votre Agilité");
 		List<Integer> values = Arrays.asList(0, 0, 0);
@@ -74,7 +75,7 @@ public class SetupServiceImpl implements SetupService {
 					if (points <= pointsLeft) {
 						values.set(i, values.get(i) + points);
 						pointsLeft = pointsLeft - points;
-						GameMessage.leftSkillPointsMessage(pointsLeft);
+						gameMessage.leftSkillPointsMessage(pointsLeft);
 					} else {
 						System.out.println("Tu n'as pas assez de points restants");
 						i--;

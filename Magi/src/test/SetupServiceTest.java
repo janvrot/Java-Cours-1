@@ -13,16 +13,17 @@
  */
 package test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import mock.gameservice.GameServiceMockForSetupServiceTest;
 import players.Guerrier;
 import players.Mage;
+import players.Player;
 import players.Rodeur;
 import utils.SetupServiceImpl;
 
@@ -37,24 +38,41 @@ public class SetupServiceTest {
 		mock = new GameServiceMockForSetupServiceTest();
 		SetupServiceImpl.setGameService(mock);
 	}
-	
-	@Before
-	public void setupChooseClassFunction() {
-		mock.setChooseTreat(0);
-	}
 
 	@Test
-	public void testChooseClassFunction() {	
+	public void testChooseClass() {
+		mock.setChooseTreat(0);
+		mock.setNbCall(0);
 		assertNull(setupService.chooseClass());
 		assertTrue(setupService.chooseClass() instanceof Guerrier);
 		assertTrue(setupService.chooseClass() instanceof Rodeur);
 		assertTrue(setupService.chooseClass() instanceof Mage);		
 	}
 	
-	@Before
-	public void setupChooseStat() {
-		mock.setChooseTreat(1);
+	@Test
+	public void testChooseStat() {
+		mock.setChooseTreat(1);	
+		Player player = setupService.chooseStat(new Guerrier());
+		assertEquals(10, player.getLvl());
+		assertEquals(50, player.getLife());
+		assertEquals(10, player.getStrength());
 	}
-
+	
+	@Test
+	public void testSkillPointsLeft() {
+		mock.setChooseTreat(2);
+		mock.setNbCall(10);
+		Player player = new Guerrier();
+		player.setLvl(5);
+		setupService.skillPointLeft(player);
+		assertEquals(0, mock.getNbCall());
+	}
+	
+	@Test
+	public void testSetupGame() {
+		mock.setChooseTreat(3);
+		mock.setNbCall(0);
+		assertTrue(setupService.setupGame().size() == 2);
+	}
 }
 

@@ -31,13 +31,28 @@ public class GameServiceMockForSetupServiceTest implements GameService {
 		switch (chooseTreat) {
 		case 0:
 			result = nbCall;
-			nbCall++;			
+			nbCall++;
+			break;
+		case 1:
+			result = 10;
+			break;
+		case 2:
+			result = nbCall+4;
+			nbCall--;
+			break;
+		case 3:
+			result = 2;
+			break;
 		}
 		return result;
 	}
 
 	public void setNbCall(int nbCall) {
 		this.nbCall = nbCall;
+	}
+	
+	public int getNbCall() {
+		return this.nbCall;
 	}
 	
 	public void setChooseTreat(int chooseTreat) {

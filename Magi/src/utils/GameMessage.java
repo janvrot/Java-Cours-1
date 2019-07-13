@@ -26,7 +26,7 @@ public class GameMessage {
 	 * @param nbPlayer
 	 *            la position du joueur
 	 */
-	public static void chooseClassMessage(int nbPlayer) {
+	public void chooseClassMessage(int nbPlayer) {
 		elements.clear();
 		elements.add(nbPlayer);
 		System.out.println(buildMessage("Création de personnage du Joueur ", elements));
@@ -39,7 +39,7 @@ public class GameMessage {
 	 * @param player
 	 *            Le joueur en cours de sélection
 	 */
-	public static void chooseStatMessage(Player player) {
+	public void chooseStatMessage(Player player) {
 		elements.clear();
 		elements.add(player.getLvl());
 		System.out.println(
@@ -52,7 +52,7 @@ public class GameMessage {
 	 * @param points
 	 *            les points restants
 	 */
-	public static void leftSkillPointsMessage(int points) {
+	public void leftSkillPointsMessage(int points) {
 		elements.clear();
 		if (points > 0) {
 			elements.add(points);
@@ -69,7 +69,7 @@ public class GameMessage {
 	 * @param player
 	 *            Le joueur dont c'est le tour de jouer
 	 */
-	public static void playerTurn(Player player) {
+	public void playerTurn(Player player) {
 		elements.clear();
 		elements.add(player.getName());
 		elements.add(" (" + player.getLife() + " pv)");
@@ -83,7 +83,7 @@ public class GameMessage {
 	 *            Le joueur dont c'est le tour de jouer
 	 * @return Le message formatté
 	 */
-	public static String chooseAttack(Player player) {
+	public String chooseAttack(Player player) {
 		String message;
 		if (player instanceof Guerrier) {
 			elements.clear();
@@ -110,11 +110,15 @@ public class GameMessage {
 	 *            Les éléments à ajouter au message
 	 * @return Le message construit
 	 */
-	public static String buildMessage(String baseMessage, List<Object> elements) {
+	public String buildMessage(String baseMessage, List<Object> elements) {
 		StringBuilder sb = new StringBuilder(baseMessage);
 		for (Object element : elements) {
 			sb.append(element);
 		}
 		return sb.toString();
+	}
+	
+	public List<Object> getElements() {
+		return GameMessage.elements;
 	}
 }
