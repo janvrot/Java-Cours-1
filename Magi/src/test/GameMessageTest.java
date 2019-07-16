@@ -15,9 +15,16 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import players.Guerrier;
+import players.Mage;
+import players.Player;
+import players.Rodeur;
 import utils.GameMessage;
 
 public class GameMessageTest {
@@ -35,6 +42,18 @@ public class GameMessageTest {
 		assertEquals(2, gameMessage.getElements().size());
 		gameMessage.leftSkillPointsMessage(0);
 		assertEquals(0, gameMessage.getElements().size());
+	}
+	
+	@Test
+	public void testChooseAttack() {
+		List<Player> players = new ArrayList<>();
+		players.add(new Guerrier());
+		players.add(new Rodeur());
+		players.add(new Mage());
+		
+		assertEquals("Choisissez une attaque (1:Coup d’épée, 2:Coup de Rage)", gameMessage.chooseAttack(players.get(0)));
+		assertEquals("Choisissez une attaque (1:Tir à l’Arc, 2:Concentration)", gameMessage.chooseAttack(players.get(1)));
+		assertEquals("Choisissez une attaque (1:Boule de Feu, 2:Soin)", gameMessage.chooseAttack(players.get(2)));
 	}
 
 }

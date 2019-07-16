@@ -20,6 +20,7 @@ import enums.TypeTarget;
 public class PartyGameServiceImpl implements PartyGameService {
 
 	private static GameService gameService = new GameServiceImpl();
+	private static GameMessage gameMessage = new GameMessage();
 
 	public void playGame(List<Player> players) {
 		List<Player> allPlayers = players;
@@ -28,8 +29,8 @@ public class PartyGameServiceImpl implements PartyGameService {
 			for (int i = 0; i < players.size(); i++) {
 				if (!checkLastPlayer(player, players.get(i))) {
 					player = players.get(i);
-					GameMessage.playerTurn(player);
-					int chooseAttack = gameService.addQuestion(GameMessage.chooseAttack(player), CHOOSEATACK);
+					gameMessage.playerTurn(player);
+					int chooseAttack = gameService.addQuestion(gameMessage.chooseAttack(player), CHOOSEATACK);
 					List<Map<TypeKeys, Object>> attack = doAttack(chooseAttack, player);
 					for (Map<TypeKeys, Object> infos : attack) {
 						int targetPosition = checkTarget(allPlayers, player, (TypeTarget) infos.get(TARGET));
@@ -128,16 +129,6 @@ public class PartyGameServiceImpl implements PartyGameService {
 		return players;
 	}
 
-	public List<Player> removeDeadPlayer(List<Player> players) {
-		for (Iterator<Player> iterator = players.iterator(); iterator.hasNext();) {
-			Player player = iterator.next();
-			if (player.getLife() <= 0) {
-				iterator.remove();
-			}
-		}
-		return players;
-	}
-
 	public Player doAction(TypeAction action, Player player, int amount, TypeStat stat) {
 		if (action == TypeAction.DAMAGE) {
 			player.setLife(player.getLife() - minimalValue(amount));
@@ -168,6 +159,8 @@ public class PartyGameServiceImpl implements PartyGameService {
 		case STRENGTH:
 			player.setStrength(player.getStrength() + minimalValue(amount));
 			System.out.println(player.getName() + " a gagné " + minimalValue(amount) + " points de force");
+			break;
+		default:
 			break;
 		}
 		return player;

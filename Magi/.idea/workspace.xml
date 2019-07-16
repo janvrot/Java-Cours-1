@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="761b0ff3-96a7-423b-9b9b-cd14a5601784" name="Default Changelist" comment="" />
+    <list default="true" id="761b0ff3-96a7-423b-9b9b-cd14a5601784" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/mock/gameservice/GameServiceMockForPartyGmeServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/PartyGameServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/PartyGameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PartyGameServiceImpl.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -9,62 +14,56 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Magi$GameMessageTest_and_3_more.ic" NAME="GameMessageTest and 3 more Coverage Results" MODIFIED="1563038989661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="176" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/players/Guerrier.java">
+        <entry file="file://$PROJECT_DIR$/src/utils/PartyGameServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="74" column="56" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
-              <folding>
-                <element signature="e#1027#1028#0" expanded="true" />
-                <element signature="e#1073#1074#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/players/Rodeur.java">
+        <entry file="file://$PROJECT_DIR$/src/test/PartyGameServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="79" column="59" selection-start-line="79" selection-start-column="59" selection-end-line="79" selection-end-column="59" />
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/enums/TypeAction.java">
+        <entry file="file://$PROJECT_DIR$/src/mock/gameservice/GameServiceMockForPartyGmeServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+            <state relative-caret-position="90">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#224#225#0" expanded="true" />
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#328#329#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/enums/TypeKeys.java">
+        <entry file="file://$PROJECT_DIR$/src/test/PlayerConditionsServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/players/Mage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="65" column="69" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="90">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -74,9 +73,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -106,6 +105,11 @@
         <option value="$PROJECT_DIR$/src/utils/GameMessage.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/utils/PartyGame.java" />
+        <option value="$PROJECT_DIR$/src/utils/PartyGameServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/PlayerGameServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/utils/PartyGameServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/mock/gameservice/GameServiceMockForPartyGmeServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/PartyGameServiceTest.java" />
       </list>
     </option>
   </component>
@@ -162,6 +166,19 @@
               <item name="Magi" type="b2602c69:ProjectViewProjectNode" />
               <item name="Magi" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Magi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Magi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="mock" type="462c0819:PsiDirectoryNode" />
+              <item name="gameservice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Magi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Magi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="players" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -190,7 +207,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563038728443" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563310655018" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -199,6 +216,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="utils" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -254,9 +272,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GameMessageTest and 3 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Magi" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="test.GameMessageTest" />
+        <pattern testClass="test.GameServiceTest" />
+        <pattern testClass="test.PlayerConditionsServiceTest" />
+        <pattern testClass="test.SetupServiceTest" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="JUnit.GameMessageTest and 3 more" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -274,7 +306,7 @@
       <workItem from="1553353141966" duration="381000" />
       <workItem from="1555532676916" duration="275000" />
       <workItem from="1556045753585" duration="16377000" />
-      <workItem from="1563038175126" duration="492000" />
+      <workItem from="1563038175126" duration="1992000" />
     </task>
     <task id="LOCAL-00001" summary="Tests des actions selon le cas">
       <created>1556053639092</created>
@@ -286,11 +318,17 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="GameMessageTest_and_3_more - 2019.07.13 at 19h 29m 54s.xml">
+      <configuration name="GameMessageTest and 3 more" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17525000" />
+    <option name="totallyTimeSpent" value="19025000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171243" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -311,7 +349,8 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32956383" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -450,13 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/GameMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -513,6 +545,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/GameMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/GameMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/SetupServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-502">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/players/Rodeur.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="79" column="59" selection-start-line="79" selection-start-column="59" selection-end-line="79" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/players/Guerrier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
@@ -524,10 +584,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/players/Rodeur.java">
+    <entry file="file://$PROJECT_DIR$/src/test/PlayerConditionsServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="79" column="59" selection-start-line="79" selection-start-column="59" selection-end-line="79" selection-end-column="59" />
+        <state relative-caret-position="90">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/PartyGameServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/PartyGameServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mock/gameservice/GameServiceMockForPartyGmeServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PartyGameServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

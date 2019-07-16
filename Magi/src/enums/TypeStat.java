@@ -7,5 +7,5 @@ package enums;
  * @version 22 mai 2019
  */
 public enum TypeStat {
-    LIFE, INTELLIGENCE, AGILITY, STRENGTH;
+    LIFE, INTELLIGENCE, AGILITY, STRENGTH, EMPTY;
 }

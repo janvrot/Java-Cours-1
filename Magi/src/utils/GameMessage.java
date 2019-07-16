@@ -39,7 +39,7 @@ public class GameMessage {
 	 * @param player
 	 *            Le joueur en cours de sélection
 	 */
-	public void chooseStatMessage(Player player) {
+	void chooseStatMessage(Player player) {
 		elements.clear();
 		elements.add(player.getLvl());
 		System.out.println(
