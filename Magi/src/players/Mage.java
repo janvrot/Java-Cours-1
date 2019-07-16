@@ -53,7 +53,7 @@ public class Mage extends Player {
 	 */
 	@Override
 	public String toString() {
-		return "Mage{} " + super.toString();
+		return "Bienvenue Mage, voici tes statistiques : " + super.toString();
 	}
 
 	/**

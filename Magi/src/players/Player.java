@@ -1,11 +1,13 @@
 package players;
 
-import static enums.TypeKeys.*;
+import static enums.TypeKeys.ACTION;
+import static enums.TypeKeys.AMOUNT;
+import static enums.TypeKeys.STAT;
+import static enums.TypeKeys.TARGET;
 
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import enums.TypeAction;
 import enums.TypeKeys;
@@ -191,40 +193,11 @@ public abstract class Player {
 	 */
 	@Override
 	public String toString() {
-		return "Player{" +
-				"lvl=" + lvl +
+		return "lvl=" + lvl +
 				", life=" + life +
 				", strength=" + strength +
 				", agility=" + agility +
 				", intelligence=" + intelligence +
-				", name='" + name + '\'' +
-				'}';
-	}
-
-	/**
-	 * 
-	 * {@inheritDoc}
-	 */
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (!(o instanceof Player))
-			return false;
-		Player player = (Player) o;
-		return getLvl() == player.getLvl() &&
-				getLife() == player.getLife() &&
-				getStrength() == player.getStrength() &&
-				getAgility() == player.getAgility() &&
-				getIntelligence() == player.getIntelligence();
-	}
-
-	/**
-	 * 
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int hashCode() {
-		return Objects.hash(getLvl(), getLife(), getStrength(), getAgility(), getIntelligence());
+				", name='" + name + '\'';
 	}
 }

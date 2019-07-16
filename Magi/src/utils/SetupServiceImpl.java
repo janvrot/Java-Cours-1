@@ -16,14 +16,24 @@ import players.Rodeur;
 import service.GameService;
 import service.SetupService;
 
+/**
+ * Mise en place de la partie
+ *
+ * @author Antoine Janvrot
+ * @version 16 juil. 2019
+ */
 public class SetupServiceImpl implements SetupService {
 
 	private static GameService gameService = new GameServiceImpl();
 	private static GameMessage gameMessage = new GameMessage();
 	
+	/**
+	 * 
+	 * {@inheritDoc}
+	 */
 	@Override
 	public List<Player> setupGame() {
-		int nbPlayers = gameService.addQuestion("Choisissez le nombre de joueurs", CHOOSEPLAYERS);
+		int nbPlayers = gameService.addQuestion("Choisissez le nombre de joueurs (entre 2 et 10)", CHOOSEPLAYERS);
 		List<Player> players = new ArrayList<>(nbPlayers);
 		for (int i = 0; i < nbPlayers; i++) {
 			gameMessage.chooseClassMessage(i+1);
@@ -37,6 +47,12 @@ public class SetupServiceImpl implements SetupService {
 		return players;
 	}
 	
+	/**
+	 * Sélection de la classe d'un joueur
+	 *
+	 * @return
+	 * 		Le joueur avec sa classe
+	 */
 	public Player chooseClass() {
 		int playerType = gameService.addQuestion("Choisissez une classe (1:Guerrier, 2:Rodeur, 3:Mage)", CHOOSECLASS);
 		switch (playerType) {
@@ -51,6 +67,14 @@ public class SetupServiceImpl implements SetupService {
 		}
 	}
 
+	/**
+	 * Application des statistiques au joueur
+	 *
+	 * @param player
+	 * 		Le joueur en cours de création
+	 * @return
+	 * 		le joueur avec ses statistiques
+	 */
 	public Player chooseStat(Player player) {
 		int lvlStat = gameService.addQuestion("Choisissez votre niveau (entre 1 et 100)", CHOOSELVL);
 		player.setLvl(lvlStat);
@@ -62,6 +86,14 @@ public class SetupServiceImpl implements SetupService {
 		return player;
 	}
 
+	/**
+	 * Vérifie qu'il reste des points à attribuer au joueur
+	 *
+	 * @param player
+	 * 		le joueur en cours de choix de ses points de compétence
+	 * @return
+	 * 		le joueur avec les modifications appliquées
+	 */
 	public List<Integer> skillPointLeft(Player player) {
 		gameMessage.chooseStatMessage(player);
 		List<String> questions = Arrays.asList("Choisissez votre force", "Choisissez votre intelligence",

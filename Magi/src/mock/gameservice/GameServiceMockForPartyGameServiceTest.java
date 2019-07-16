@@ -16,21 +16,29 @@ package mock.gameservice;
 import enums.TypeFilter;
 import service.GameService;
 
+/**
+ * Mock pour le test de la classe PartyGameService
+ *
+ * @author Antoine Janvrot
+ * @version 16 juil. 2019
+ */
 public class GameServiceMockForPartyGameServiceTest implements GameService {
-	int nbAsk = 0;
+	int nbAsk = 4;
 
 	@Override
 	public int getResponse() {
-
-		if (nbAsk < 4) {
-			nbAsk++;
-			return 0;
-		}
 		return 1;
 	}
 
 	@Override
 	public int addQuestion(String question, TypeFilter filter) {
-		return 2;
+		if (nbAsk > 1) {
+			nbAsk--;	
+		}
+		return nbAsk;
+	}
+	
+	public void setNbAsk(int nbAsk) {
+		this.nbAsk = nbAsk;
 	}
 }

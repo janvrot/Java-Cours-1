@@ -16,6 +16,12 @@ package mock.playerconditionsservice;
 import enums.TypeFilter;
 import service.PlayerConditionsService;
 
+/**
+ * Mock pour le test de la classe PlayerConditionService
+ *
+ * @author Antoine Janvrot
+ * @version 16 juil. 2019
+ */
 public class PlayerConditionServiceMockForGameServiceTest implements PlayerConditionsService {
 
 	@Override

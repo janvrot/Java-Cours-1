@@ -15,8 +15,24 @@ package service;
 
 import enums.TypeFilter;
 
+/**
+ * Interface de gestion des filtres à appliquer aux questions
+ *
+ * @author Antoine Janvrot
+ * @version 16 juil. 2019
+ */
 public interface PlayerConditionsService {
 
+	/**
+	 * Pose la question et filtre la réponse
+	 *
+	 * @param question
+	 * 		La question posée
+	 * @param filter
+	 * 		le filtre appliqué à la réponse
+	 * @return
+	 * 		La réponse si correcte
+	 */
 	int checkCondition(String question, TypeFilter filter);
 }
 

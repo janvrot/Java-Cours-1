@@ -16,6 +16,12 @@ package mock.gameservice;
 import enums.TypeFilter;
 import service.GameService;
 
+/**
+ * Mock pour le test de la classe SetupService
+ *
+ * @author Antoine Janvrot
+ * @version 16 juil. 2019
+ */
 public class GameServiceMockForSetupServiceTest implements GameService {
 	private int chooseTreat = 0;
 	private int nbCall = 0;

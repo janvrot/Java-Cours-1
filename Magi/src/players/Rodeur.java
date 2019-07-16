@@ -53,7 +53,7 @@ public class Rodeur extends Player {
 	 */
 	@Override
 	public String toString() {
-		return "Rodeur{} " + super.toString();
+		return "Bienvenue Rodeur, voici tes statistiques : " + super.toString();
 	}
 
 	/**

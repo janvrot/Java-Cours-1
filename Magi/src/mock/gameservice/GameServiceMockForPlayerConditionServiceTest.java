@@ -16,6 +16,12 @@ package mock.gameservice;
 import enums.TypeFilter;
 import service.GameService;
 
+/**
+ * Mock pour le test de la classe PlayerConditionService
+ *
+ * @author Antoine Janvrot
+ * @version 16 juil. 2019
+ */
 public class GameServiceMockForPlayerConditionServiceTest implements GameService {
 	int nbAsk = 0;
 

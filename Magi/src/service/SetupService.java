@@ -17,8 +17,20 @@ import java.util.List;
 
 import players.Player;
 
+/**
+ * Interface de mise en place de la partie
+ *
+ * @author Antoine Janvrot
+ * @version 16 juil. 2019
+ */
 public interface SetupService {
 
+	/**
+	 * Création des joueurs
+	 *
+	 * @return
+	 * 		Les joueurs de la partie
+	 */
 	List<Player> setupGame();
 }
 

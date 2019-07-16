@@ -18,9 +18,8 @@ public class GameServiceImpl implements GameService {
 	private static PlayerConditionsService playerConditionService = new PlayerConditionsServiceImpl();
 
 	/**
-	 * Récupère l'entrée dans le terminal
-	 *
-	 * @return La valeur de l'entrée
+	 * 
+	 * {@inheritDoc}
 	 */
 	@SuppressWarnings("resource")
 	@Override
@@ -34,6 +33,10 @@ public class GameServiceImpl implements GameService {
 		}
 	}
 
+	/**
+	 * 
+	 * {@inheritDoc}
+	 */
 	@Override
 	public int addQuestion(String question, TypeFilter filter) {
 		System.out.println(question);

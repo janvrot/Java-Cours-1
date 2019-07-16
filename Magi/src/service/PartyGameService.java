@@ -17,8 +17,22 @@ import java.util.List;
 
 import players.Player;
 
+/**
+ * Interface de gestion de la partie
+ *
+ * @author Antoine Janvrot
+ * @version 16 juil. 2019
+ */
 public interface PartyGameService {
 
-	void playGame(List<Player> players);
+	/**
+	 * Déroulement de la partie
+	 *
+	 * @param players
+	 * 		La liste des joueurs en jeu
+	 * @return
+	 * 		La liste des joueurs en train de jouer
+	 */
+	List<Player> playGame(List<Player> players);
 }
 

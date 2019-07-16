@@ -51,7 +51,7 @@ public class Guerrier extends Player {
 	 */
 	@Override
 	public String toString() {
-		return "Guerrier{} " + super.toString();
+		return "Bienvenue Guerrier, voici tes statistiques : " + super.toString();
 	}
 
 	/**
